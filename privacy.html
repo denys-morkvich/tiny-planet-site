@@ -5,52 +5,127 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy — Tiny Planet</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: radial-gradient(circle at top right, #1e1b4b, #000000);
+            background-attachment: fixed;
+            min-height: 100vh;
+        }
+
+        /* Эффект матового стекла */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(25px) saturate(180%);
+            -webkit-backdrop-filter: blur(25px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 32px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Стилизация скроллбара под Apple */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { 
+            background: rgba(255, 255, 255, 0.1); 
+            border-radius: 10px; 
+        }
+
+        /* Анимированное свечение на фоне */
+        .orb {
+            position: fixed;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            filter: blur(100px);
+            opacity: 0.15;
+            z-index: -1;
+            animation: float 20s infinite alternate;
+        }
+
+        @keyframes float {
+            from { transform: translate(-10%, -10%); }
+            to { transform: translate(20%, 20%); }
+        }
+    </style>
 </head>
-<body class="bg-[#0a0a0a] text-gray-300 font-sans leading-relaxed">
+<body class="text-zinc-300 font-sans antialiased selection:bg-blue-500/30">
 
-    <div class="max-w-3xl mx-auto px-6 py-20">
-        <a href="index.html" class="text-blue-500 hover:underline mb-10 inline-block">← Back to Home</a>
+    <div class="orb top-0 left-0"></div>
+    <div class="orb bottom-0 right-0" style="animation-delay: -5s; background: #ec4899;"></div>
+
+    <div class="max-w-4xl mx-auto px-6 py-16">
         
-        <h1 class="text-4xl font-black text-white mb-8">Privacy Policy</h1>
-        <p class="mb-6 text-sm italic">Last Updated: March 20, 2026</p>
+        <a href="index.html" class="inline-flex items-center px-4 py-2 mb-12 glass-card text-sm text-white hover:bg-white/10 transition-all duration-300">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+            Back to Home
+        </a>
+        
+        <div class="glass-card p-8 md:p-16 relative overflow-hidden">
+            
+            <header class="mb-16 border-b border-white/10 pb-10">
+                <h1 class="text-5xl font-extrabold text-white tracking-tight mb-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-white/60">
+                    Privacy Policy
+                </h1>
+                <p class="text-xs uppercase tracking-[0.2em] text-blue-400 font-bold opacity-80">
+                    Last Updated: March 20, 2026
+                </p>
+            </header>
 
-        <section class="mb-10">
-            <h2 class="text-2xl font-bold text-white mb-4">1. Introduction</h2>
-            <p>Tiny Planet ("we," "our," or "us") respects your privacy. This policy explains how we collect and use data when you use our iOS application and website.</p>
-        </section>
+            <div class="space-y-12">
+                <section>
+                    <h2 class="text-xl font-semibold text-white mb-4 flex items-center">
+                        <span class="w-1.5 h-6 bg-blue-500 rounded-full mr-3"></span>
+                        1. Introduction
+                    </h2>
+                    <p class="text-lg leading-relaxed text-zinc-400">
+                        Tiny Planet ("we," "our," or "us") respects your privacy. This policy explains how we collect and use data when you use our iOS application and website.
+                    </p>
+                </section>
 
-        <section class="mb-10">
-            <h2 class="text-2xl font-bold text-white mb-4">2. Data We Collect</h2>
-            <ul class="list-disc pl-6 space-y-2">
-                <li><strong>Location Data:</strong> To reveal countries on your map and show your "Puck" position, we request access to your GPS location. This data is processed locally on your device.</li>
-                <li><strong>Visited Countries:</strong> We store a list of country identifiers (ISO codes) to sync your map progress.</li>
-                <li><strong>eSIM Transactions:</strong> If you purchase an eSIM, we collect minimal data required for order fulfillment (via our partners like Airalo/Stripe). We do not store your credit card details.</li>
-            </ul>
-        </section>
+                <section>
+                    <h2 class="text-xl font-semibold text-white mb-4 flex items-center">
+                        <span class="w-1.5 h-6 bg-purple-500 rounded-full mr-3"></span>
+                        2. Data We Collect
+                    </h2>
+                    <div class="grid gap-4">
+                        <div class="p-5 bg-white/5 rounded-2xl border border-white/5 hover:border-white/10 transition-colors">
+                            <h3 class="text-white font-medium mb-1">Location Data</h3>
+                            <p class="text-sm">To reveal countries on your map and show your "Puck" position. Processed locally on your device.</p>
+                        </div>
+                        <div class="p-5 bg-white/5 rounded-2xl border border-white/5 hover:border-white/10 transition-colors">
+                            <h3 class="text-white font-medium mb-1">Visited Countries</h3>
+                            <p class="text-sm">We store ISO codes to sync your map progress across devices.</p>
+                        </div>
+                        <div class="p-5 bg-white/5 rounded-2xl border border-white/5 hover:border-white/10 transition-colors">
+                            <h3 class="text-white font-medium mb-1">eSIM Transactions</h3>
+                            <p class="text-sm">Minimal data for order fulfillment via partners (Airalo/Stripe). No credit card storage.</p>
+                        </div>
+                    </div>
+                </section>
 
-        <section class="mb-10">
-            <h2 class="text-2xl font-bold text-white mb-4">3. Third-Party Services</h2>
-            <p>We use the following partners to provide our services:</p>
-            <ul class="list-disc pl-6 mt-4 space-y-2">
-                <li><strong>Mapbox:</strong> For map rendering and geocoding.</li>
-                <li><strong>eSIM Providers:</strong> To issue digital SIM cards and data plans.</li>
-                <li><strong>Stripe/Apple Pay:</strong> For secure payment processing.</li>
-            </ul>
-        </section>
+                <section>
+                    <h2 class="text-xl font-semibold text-white mb-4 flex items-center">
+                        <span class="w-1.5 h-6 bg-pink-500 rounded-full mr-3"></span>
+                        3. Third-Party Services
+                    </h2>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 glass-card text-sm text-white/80 font-medium">Mapbox</span>
+                        <span class="px-4 py-2 glass-card text-sm text-white/80 font-medium">Airalo eSIM API</span>
+                        <span class="px-4 py-2 glass-card text-sm text-white/80 font-medium">Apple Pay / Stripe</span>
+                    </div>
+                </section>
 
-        <section class="mb-10">
-            <h2 class="text-2xl font-bold text-white mb-4">4. Data Retention</h2>
-            <p>Your travel history and visited countries are stored as long as your account is active. You can request data deletion at any time through the app settings or via email.</p>
-        </section>
+                <section class="p-6 bg-blue-500/10 rounded-3xl border border-blue-500/20">
+                    <h2 class="text-xl font-semibold text-white mb-4">5. Contact Us</h2>
+                    <p>Questions? Reach out at: <a href="mailto:support@tinyplanet.app" class="text-blue-400 hover:text-blue-300 underline decoration-blue-500/30 underline-offset-4 transition-all">support@tinyplanet.app</a></p>
+                </section>
+            </div>
 
-        <section class="mb-10">
-            <h2 class="text-2xl font-bold text-white mb-4">5. Contact Us</h2>
-            <p>If you have any questions, contact us at: <span class="text-white">support@tinyplanet.app</span></p>
-        </section>
-
-        <footer class="border-t border-zinc-800 pt-10 mt-20 text-sm text-gray-500 text-center">
-            Tiny Planet App &copy; 2026
-        </footer>
+            <footer class="mt-20 pt-8 border-t border-white/5 text-center">
+                <p class="text-xs text-zinc-500 tracking-widest">TINY PLANET APP &copy; 2026</p>
+            </footer>
+        </div>
     </div>
 
 </body>
