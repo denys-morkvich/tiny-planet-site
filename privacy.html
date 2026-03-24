@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy — Tiny Planet</title>
+    <title>Privacy — Tiny Planet</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
         
         body {
             background-color: #000;
             background-image: radial-gradient(circle at 50% -20%, #1a1a1a 0%, #000 100%);
             color: #a1a1a1;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Inter', -apple-system, sans-serif;
             min-height: 100vh;
         }
 
@@ -28,17 +28,17 @@
             font-weight: 400;
         }
 
-        h1, h2 {
-            letter-spacing: -0.02em;
-        }
-
         section {
             border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-            padding-bottom: 3rem;
+            padding-bottom: 3.5rem;
         }
 
-        section:last-of-type {
-            border-bottom: none;
+        section:last-of-type { border-bottom: none; }
+
+        .list-item::before {
+            content: "—";
+            margin-right: 0.75rem;
+            color: rgba(255, 255, 255, 0.2);
         }
     </style>
 </head>
@@ -46,55 +46,88 @@
 
     <div class="max-w-screen-md mx-auto px-8 py-24">
         
-        <a href="index.html" class="text-xs uppercase tracking-widest text-zinc-500 hover:text-white transition-colors duration-500 block mb-20">
-            ← Close
+        <a href="index.html" class="text-[10px] uppercase tracking-[0.4em] text-zinc-600 hover:text-white transition-colors duration-500 block mb-20">
+            ← Return
         </a>
 
-        <main class="glass-panel rounded-[40px] p-12 md:p-20">
+        <main class="glass-panel rounded-[44px] p-10 md:p-20">
             
-            <header class="mb-20">
-                <h1 class="text-4xl text-white mb-4 font-normal">Privacy Policy</h1>
-                <p class="text-sm text-zinc-600 font-light">Version 1.2 — March 20, 2026</p>
+            <header class="mb-24">
+                <h1 class="text-5xl text-white mb-6 font-light tracking-tight">Privacy Policy</h1>
+                <p class="text-xs text-zinc-600 uppercase tracking-widest font-medium">Updated March 24, 2026</p>
             </header>
 
-            <div class="space-y-16">
+            <div class="space-y-20">
                 
                 <section>
-                    <h2 class="text-sm uppercase tracking-widest text-zinc-500 mb-6">Introduction</h2>
+                    <h2 class="text-xs uppercase tracking-[0.2em] text-zinc-500 mb-8 font-semibold">01 / Introduction</h2>
                     <p class="text-lg leading-relaxed font-light">
-                        Tiny Planet values your <span class="text-focus">privacy above all</span>. This document outlines our commitment to data transparency and security within our iOS ecosystem.
+                        Welcome to <span class="text-focus">Tiny Planet</span>. We respect your privacy and are committed to protecting your personal data. This policy explains our data practices for our mobile application and eSIM ecosystem.
                     </p>
                 </section>
 
                 <section>
-                    <h2 class="text-sm uppercase tracking-widest text-zinc-500 mb-6">Data Collection</h2>
-                    <p class="text-lg leading-relaxed font-light mb-4">
-                        We process <span class="text-focus">Location Data</span> locally to reveal countries on your map. We never transmit your precise GPS coordinates to our servers.
-                    </p>
+                    <h2 class="text-xs uppercase tracking-[0.2em] text-zinc-500 mb-8 font-semibold">02 / Collection</h2>
+                    <div class="space-y-6 text-lg font-light">
+                        <p><span class="text-focus">Account Data:</span> Email and Apple ID via secure Sign in with Apple.</p>
+                        <p><span class="text-focus">Connectivity:</span> Device identifiers (EID/IMEI) and ICCID required for eSIM activation.</p>
+                        <p><span class="text-focus">Location:</span> Precise GPS data (with consent) to suggest local plans and build itineraries.</p>
+                        <p><span class="text-focus">Usage:</span> Anonymized interaction tokens for our Travel AI Guide.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 class="text-xs uppercase tracking-[0.2em] text-zinc-500 mb-8 font-semibold">03 / Purpose</h2>
                     <p class="text-lg leading-relaxed font-light">
-                        Order fulfillment for <span class="text-focus">eSIM packages</span> is handled via Airalo and Stripe. We do not store or see your financial credentials.
+                        Data is used exclusively for <span class="text-focus">service delivery</span>, AI-driven personalization, and providing emergency contact information in our SOS module.
                     </p>
                 </section>
 
                 <section>
-                    <h2 class="text-sm uppercase tracking-widest text-zinc-500 mb-6">Partners</h2>
+                    <h2 class="text-xs uppercase tracking-[0.2em] text-zinc-500 mb-8 font-semibold">04 / Data Sharing</h2>
+                    <p class="text-lg leading-relaxed font-light mb-8">
+                        We share data only with essential partners providing equivalent protection:
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm font-light uppercase tracking-wider text-zinc-400">
+                        <div class="list-item">Airalo (eSIM Provisioning)</div>
+                        <div class="list-item">Stripe & Apple Pay</div>
+                        <div class="list-item">Amplitude (Analytics)</div>
+                        <div class="list-item">Gemini / OpenAI (AI Logic)</div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 class="text-xs uppercase tracking-[0.2em] text-zinc-500 mb-8 font-semibold">05 / Your Rights</h2>
+                    <p class="text-lg leading-relaxed font-light mb-6">
+                        You have the right to access, export, or correct your data at any time.
+                    </p>
+                    <div class="p-8 bg-white/[0.03] rounded-3xl border border-white/5">
+                        <p class="text-white font-medium mb-2">Account Deletion</p>
+                        <p class="text-sm font-light leading-relaxed">
+                            You can purge all personal data via <span class="text-focus">Settings > Account > Delete Account</span>. Data is permanently erased from our servers within 30 days.
+                        </p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 class="text-xs uppercase tracking-[0.2em] text-zinc-500 mb-8 font-semibold">06 / Compliance</h2>
                     <p class="text-lg leading-relaxed font-light">
-                        Mapbox, Airalo, and Stripe. Each partner is selected for their industry-leading <span class="text-focus">security standards</span>.
+                        We ensure all global data transfers comply with <span class="text-focus">GDPR</span> (Europe) and <span class="text-focus">CCPA</span> (California) standards.
                     </p>
                 </section>
 
                 <section>
-                    <h2 class="text-sm uppercase tracking-widest text-zinc-500 mb-6">Contact</h2>
-                    <p class="text-lg leading-relaxed font-light">
-                        For data deletion or inquiries: <br>
-                        <a href="mailto:support@tinyplanet.app" class="text-white border-b border-white/20 hover:border-white transition-colors">support@tinyplanet.app</a>
+                    <h2 class="text-xs uppercase tracking-[0.2em] text-zinc-500 mb-8 font-semibold">07 / Contact</h2>
+                    <p class="text-xl leading-relaxed font-light">
+                        <a href="mailto:support@tinyplanet.app" class="text-white border-b border-white/20 hover:border-white transition-all duration-300">support@tinyplanet.app</a>
                     </p>
                 </section>
 
             </div>
 
-            <footer class="mt-24 text-[10px] uppercase tracking-[0.3em] text-zinc-700">
-                Tiny Planet / 2026 / All Rights Reserved
+            <footer class="mt-32 flex justify-between items-center text-[9px] uppercase tracking-[0.4em] text-zinc-700">
+                <span>Tiny Planet / 2026</span>
+                <span class="text-zinc-800">Designed for Vision</span>
             </footer>
 
         </main>
