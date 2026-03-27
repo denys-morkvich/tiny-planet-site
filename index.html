@@ -34,6 +34,83 @@
             transform: scale(1.02);
             box-shadow: 0 0 20px rgba(255,255,255,0.3);
         }
+
+        .partners-section {
+    padding: 60px 0;
+    background: rgba(255, 255, 255, 0.03); /* Едва заметный стеклянный фон */
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    width: 100%;
+    align-items: center;
+}
+
+.partners-title {
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+.partners-slider {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Эффект затухания по бокам */
+.partners-slider::before,
+.partners-slider::after {
+    height: 100%;
+    align-items: center;
+    width: 200px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.partners-slider::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);
+    align-items: center;
+}
+
+.partners-slider::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);
+    align-items: center;
+}
+
+.partners-track {
+    display: flex;
+    width: calc(250px * 10); /* 250px ширина слайда * кол-во слайдов */
+    animation: scroll 30s linear infinite;
+}
+
+.slide {
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide img {
+    height: 40px; /* Фиксированная высота для всех логотипов */
+    width: auto;
+    filter: grayscale(100%) opacity(0.5);
+    transition: all 0.3s ease;
+}
+
+.slide img:hover {
+    filter: grayscale(0%) opacity(1);
+    transform: scale(1.1);
+}
+
+        
     </style>
 </head>
 <body class="antialiased">
@@ -102,6 +179,17 @@
             </div>
         </div>
     </section>
+
+<section class="partners-section">
+    <div class="partners-title">TRUSTED BY TECHNOLOGY LEADERS</div>
+    <div class="partners-slider">
+        <div class="partners-track">
+            <div class="slide"><img src="assets/airalo.svg" alt="Airalo"></div>
+            <div class="slide"><img src="assets/mapbox.svg" alt="Mapbox"></div>
+
+        </div>
+    </div>
+</section>
 
     <footer class="py-20 border-t border-white/5">
         <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
