@@ -151,7 +151,7 @@ section { padding: 72px 0; }
 .esim-viewport::-webkit-scrollbar { display: none; }
 .is-enhanced .esim-viewport { overflow: hidden; }
 .esim-track { display: flex; touch-action: pan-y pinch-zoom; margin-left: -12px; }
-.esim-slide { flex: 0 0 80%; min-width: 0; padding-left: 12px; display: flex; }
+.esim-slide { flex: 0 0 84%; min-width: 0; padding-left: 12px; display: flex; }
 .esim-card {
   flex: 1;
   display: flex; flex-direction: column;
