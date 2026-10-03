@@ -110,13 +110,20 @@ section { padding: 72px 0; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
 .mockup {
   position: relative;
+  align-self: center;
+  height: max-content;
   width: min(300px, 80%); margin: 0 auto;
   padding: 10px;
   background: #1c1c1c;
   border: 1px solid #3a3a3a;
   border-radius: 48px;
 }
-.mockup img { width: 100%; height: auto; border-radius: 38px; }
+.mockup img {
+  width: 100%; height: auto;
+  aspect-ratio: 1024 / 2227;
+  object-fit: cover;
+  border-radius: 38px;
+}
 /* Dynamic Island */
 .mockup::after {
   content: ""; position: absolute;
