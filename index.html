@@ -4,24 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Tiny Planet — Travel map and eSIM data plans for iPhone</title>
-  <meta name="description" content="Tiny Planet is an iOS travel app: reveal the map as you explore and buy prepaid eSIM data plans (USA 3 GB $11, Europe 5 GB $15) delivered instantly.">
+  <meta name="description" content="Tiny Planet is an iOS travel app: reveal the map as you explore and buy prepaid 5 GB eSIM data plans for 12 destinations, from $8, delivered instantly.">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
-  <script>
-    // Checkout configuration.
-    // TODO: paste the Lemon Squeezy checkout URL for each plan once the store is approved.
-    // While a value is empty, the "Buy" button falls back to its mailto: href.
-    const CHECKOUT_URLS = {
-      "esim-usa-3gb": "",
-      "esim-europe-5gb": ""
-    };
-    document.addEventListener("DOMContentLoaded", function () {
-      document.querySelectorAll("[data-plan]").forEach(function (btn) {
-        const url = CHECKOUT_URLS[btn.dataset.plan];
-        if (url) btn.href = url;
-      });
-    });
-  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/embla-carousel@8.6.0/embla-carousel.umd.js" integrity="sha384-XGqLM9+dJ+PFOMZn6IuZgRRIoxcAT5fx4eIZCx7K3O2Dj5RA7EOlJ3yOS8Jd+kiY" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/embla-carousel-auto-scroll@8.6.0/embla-carousel-auto-scroll.umd.js" integrity="sha384-5x3y2MLuLA5c1LQceYM+lo59GGkQmLzQGzbuHhDUDbnOJkFeTl5jUSdBy3JehMcM" crossorigin="anonymous"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -87,34 +74,30 @@
     <section id="esim" aria-labelledby="esim-title">
       <div class="container">
         <h2 class="section-title" id="esim-title">eSIM data plans</h2>
-        <p class="section-lead">Prepaid mobile data plans for travel, provided by Airalo. One-time payment per plan.</p>
-        <div class="plans">
-          <article class="card plan">
-            <h3>eSIM USA</h3>
-            <p class="data">3 GB data</p>
-            <p class="price">$11.00<span>USD</span></p>
-            <ul>
-              <!-- TODO: add the validity period for this plan (e.g. "Valid for N days"). -->
-              <li>Delivered instantly as a digital eSIM (QR code / in-app install)</li>
-              <li>Requires an eSIM-compatible, carrier-unlocked device</li>
-            </ul>
-            <a class="btn btn-primary" data-plan="esim-usa-3gb" href="mailto:hey@tinyplanet.tech?subject=eSIM%20purchase%20-%20USA%203%20GB">Buy eSIM USA</a>
-          </article>
-          <article class="card plan">
-            <h3>eSIM Europe</h3>
-            <p class="data">5 GB data</p>
-            <p class="price">$15.00<span>USD</span></p>
-            <ul>
-              <!-- TODO: add the validity period for this plan (e.g. "Valid for N days"). -->
-              <!-- TODO: consider listing the countries covered by the Europe plan. -->
-              <li>Delivered instantly as a digital eSIM (QR code / in-app install)</li>
-              <li>Requires an eSIM-compatible, carrier-unlocked device</li>
-            </ul>
-            <a class="btn btn-primary" data-plan="esim-europe-5gb" href="mailto:hey@tinyplanet.tech?subject=eSIM%20purchase%20-%20Europe%205%20GB">Buy eSIM Europe</a>
-          </article>
+        <p class="section-lead">Prepaid 5 GB data for 30 days in 12 popular destinations, provided by Airalo. Delivered instantly as a digital eSIM (QR code / in-app install).</p>
+
+        <div class="esim-carousel" data-esim-carousel role="region" aria-roledescription="carousel" aria-label="eSIM plans">
+          <div class="esim-viewport">
+            <div class="esim-track"></div>
+          </div>
+          <div class="esim-controls">
+            <button type="button" class="icon-btn" data-esim-toggle aria-pressed="false" aria-label="Pause autoplay">
+              <svg class="icon-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="7" y="5" width="3.5" height="14" rx="1"/><rect x="13.5" y="5" width="3.5" height="14" rx="1"/></svg>
+              <svg class="icon-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg>
+            </button>
+            <button type="button" class="icon-btn" data-esim-prev aria-label="Previous plans">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            </button>
+            <button type="button" class="icon-btn" data-esim-next aria-label="Next plans">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </div>
         </div>
-        <p class="payment-note">Payments are processed securely by Lemon Squeezy, our Merchant of Record.</p>
-        <p class="payment-note">See our <a href="terms.html">Terms of Service</a> and <a href="refund.html">Refund Policy</a> before buying.</p>
+        <noscript><p class="payment-note">To buy a plan, email <a href="mailto:hey@tinyplanet.tech?subject=eSIM%20purchase">hey@tinyplanet.tech</a>.</p></noscript>
+        <script src="assets/esim-plans.js"></script>
+        <script src="assets/carousel.js"></script>
+
+        <p class="payment-note">Prices in USD. Requires an eSIM-compatible, carrier-unlocked device. Payments are processed securely by Lemon Squeezy, our Merchant of Record. See our <a href="refund.html">Refund Policy</a>.</p>
       </div>
     </section>
 
