@@ -160,18 +160,14 @@ section { padding: 72px 0; }
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  color: var(--text); text-decoration: none;
   user-select: none; -webkit-user-select: none;
 }
-.esim-card:hover { border-color: #3d3d3d; color: var(--text); }
-.esim-card:hover .esim-buy { color: var(--accent); }
-.esim-card:focus-visible { outline-offset: -2px; border-radius: var(--radius); }
+.is-enhanced .esim-viewport { cursor: grab; }
 .esim-flag { width: 36px; height: 36px; border-radius: 10px; margin-bottom: 18px; }
 .esim-card h3 { font-size: 1.125rem; }
 .esim-meta { color: var(--muted); font-size: 0.9375rem; margin: 4px 0 20px; }
-.esim-foot { margin-top: auto; display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.esim-foot { margin-top: auto; }
 .esim-price { font-size: 1.75rem; font-weight: 650; letter-spacing: -0.02em; line-height: 1; }
-.esim-buy { color: var(--muted); font-size: 0.9375rem; font-weight: 600; }
 
 .esim-controls { display: flex; justify-content: flex-end; gap: 8px; margin-top: 16px; }
 .icon-btn {

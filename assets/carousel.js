@@ -15,12 +15,8 @@
     slide.setAttribute("aria-roledescription", "slide");
     slide.setAttribute("aria-label", (i + 1) + " of " + plans.length);
 
-    const card = document.createElement("a");
+    const card = document.createElement("article");
     card.className = "esim-card";
-    card.href = p.checkoutUrl;
-    card.draggable = false;
-    card.setAttribute("aria-label",
-      "Buy " + p.title + " eSIM, " + p.validityDays + " days, data only, $" + p.priceUSD.toFixed(2) + " USD");
 
     const flag = document.createElement("img");
     flag.className = "esim-flag";
@@ -42,11 +38,7 @@
     const price = document.createElement("span");
     price.className = "esim-price";
     price.textContent = "$" + p.priceUSD.toFixed(2);
-    const buy = document.createElement("span");
-    buy.className = "esim-buy";
-    buy.setAttribute("aria-hidden", "true");
-    buy.textContent = "Buy →";
-    foot.append(price, buy);
+    foot.append(price);
 
     card.append(flag, title, meta, foot);
     slide.append(card);
@@ -101,7 +93,7 @@
 
     root.addEventListener("pointerenter", function (e) { if (e.pointerType === "mouse") { state.hover = true; update(); } });
     root.addEventListener("pointerleave", function (e) { if (e.pointerType === "mouse") { state.hover = false; update(); } });
-    // Focus is tracked on the cards only, so the pause button itself does not hold autoplay.
+    // Focus is tracked inside the viewport only, so the pause button itself does not hold autoplay.
     viewport.addEventListener("focusin", function () { state.focus = true; update(); });
     viewport.addEventListener("focusout", function (e) {
       if (!viewport.contains(e.relatedTarget)) { state.focus = false; update(); }
