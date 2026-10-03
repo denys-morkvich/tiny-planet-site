@@ -108,7 +108,22 @@ section { padding: 72px 0; }
 .hero h1 { font-size: clamp(2.5rem, 8vw, 4.25rem); letter-spacing: -0.035em; margin-bottom: 20px; }
 .hero p { color: var(--muted); font-size: 1.1875rem; max-width: 34rem; margin: 0 0 32px; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
-.mockup { width: min(300px, 80%); margin: 0 auto; }
+.mockup {
+  position: relative;
+  width: min(300px, 80%); margin: 0 auto;
+  padding: 10px;
+  background: #1c1c1c;
+  border: 1px solid #3a3a3a;
+  border-radius: 48px;
+}
+.mockup img { width: 100%; height: auto; border-radius: 38px; }
+/* Dynamic Island */
+.mockup::after {
+  content: ""; position: absolute;
+  top: calc(10px + 1.6%); left: 50%; transform: translateX(-50%);
+  width: 30%; height: 3.4%;
+  background: #000; border-radius: 999px;
+}
 
 /* Features */
 .grid-3 { display: grid; gap: 16px; }
